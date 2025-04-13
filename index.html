@@ -196,6 +196,7 @@
           <p><label>Message :</label></p>
           <textarea name="message" rows="5" placeholder="Votre message ici..." required></textarea>
 
+          <div id="form-success" class="form-message hidden">✔️ Message envoyé avec succès !</div>
           <button type="submit" class="modern-button">Envoyer</button>
         </form>
       </div>
@@ -209,6 +210,30 @@
       <p>Développeur Web & Technicien IT Freelance</p>
     </div>
   </footer>
+  
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('form-success');
+  
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Empêche la redirection
+  
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          successMsg.classList.remove('hidden');
+          form.reset();
+        }
+      }).catch(error => {
+        successMsg.textContent = '❌ Une erreur est survenue.';
+        successMsg.classList.remove('hidden');
+      });
+    });
+  </script>
   
 </body>
 </html>

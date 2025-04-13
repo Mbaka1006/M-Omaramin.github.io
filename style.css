@@ -684,3 +684,17 @@
     background-color: #c84cff;
     color: #fff;
   }
+
+  .form-message {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #1e90ff;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
