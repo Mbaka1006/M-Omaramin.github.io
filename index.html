@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M.Omar – Développeur Web & IT Freelance</title>
+  <link rel="icon" type="image/png" href="M_favicon.png">
+  <title>MOA-IT Freelance</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -15,11 +16,12 @@
                 <span class="brand-name"></span>
               </div>                         
             <ul class="nav-links">
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">À PROPOS</a></li>
+              <li><a href="#skills">COMPÉTENCES</a></li>
+              <li><a href="#projects">PROJETS</a></li>
+              <li><a href="#contact">CONTACT</a></li>
             </ul>
+            <div class="burger">☰</div>
         </nav>
         
         <div class="hero-content">
@@ -35,18 +37,32 @@
           <img src="avatar-tech.png" alt="Avatar développeur" class="float-avatar" />
           <p>
             Je suis un professionnel passionné par le numérique, avec une double casquette :
-            technicien support IT depuis plus de 3 ans, et développeur web formé depuis plusieurs années.
-            Mon parcours m’a permis d’acquérir une solide expérience sur le terrain comme en développement, alliant technique, rigueur et créativité.
+            <strong>technicien support IT depuis plus de 3 ans</strong>, et
+            <strong>développeur web formé depuis plusieurs années</strong>. 
+            Mon parcours m’a permis d’acquérir une solide expérience sur le terrain comme en développement, 
+            alliant <strong>technique, rigueur et créativité</strong>.
           </p>
+          
           <p>
-            En tant que technicien IT, j’interviens quotidiennement dans le support informatique, l’installation, la formation des utilisateurs et la gestion de projets. J’ai également piloté une migration informatique complète sur un an, renforçant mes compétences en infrastructure.
+            En tant que <strong>technicien IT</strong>, j’interviens quotidiennement dans
+            <strong>le support informatique, l’installation, la formation des utilisateurs</strong> et
+            <strong>la gestion de projets</strong>. 
+            J’ai également <strong>piloté une migration informatique complète sur un an</strong>, 
+            renforçant mes compétences en infrastructure.
           </p>
+          
           <p>
-            Côté développement, j’ai réalisé divers projets web et mobiles, dans le cadre de ma formation ou pour mon entourage. De la création de sites vitrines à des jeux mobiles, j’aime concevoir des solutions efficaces, modernes et personnalisées.
+            Côté développement, j’ai réalisé <strong>divers projets web et mobiles</strong>, 
+            dans le cadre de ma formation ou pour mon entourage. 
+            De la <strong>création de sites vitrines</strong> à des <strong>jeux mobiles</strong>, 
+            j’aime concevoir des solutions efficaces, modernes et personnalisées.
           </p>
+          
           <p>
-            Curieux et motivé, je développe aussi en parallèle des projets personnels qui nourrissent ma passion pour le code.
+            Curieux et motivé, je développe aussi en parallèle 
+            <strong>des projets personnels</strong> qui nourrissent ma passion pour le code.
           </p>
+          
         </div>
       </section>
       
@@ -184,21 +200,20 @@
       </div>
       <div class="shell-body">
         <H2 class="user">Contactez-moi !</H2>
-        <form action="https://formsubmit.co/muustafa.amin@gmail.com" method="POST" class="shell-form">
-          <input type="hidden" name="_next" value="https://moa-it200.github.io/M-Omaramin.github.io">
-          <input type="text" name="_honey" style="display:none">
+        <form action="send.php" method="POST" class="shell-form" id="contact-form">
           <p><label>Nom :</label></p>
           <input type="text" name="name" placeholder="Votre nom..." required />
-  
+        
           <p><label>Email :</label></p>
           <input type="email" name="email" placeholder="Votre email..." required />
-  
+        
           <p><label>Message :</label></p>
           <textarea name="message" rows="5" placeholder="Votre message ici..." required></textarea>
-
+        
           <div id="form-success" class="form-message hidden">✔️ Message envoyé avec succès !</div>
           <button type="submit" class="modern-button">Envoyer</button>
         </form>
+        
       </div>
     </div>
   </section>
@@ -206,7 +221,7 @@
   <footer class="main-footer">
     <div class="footer-overlay"></div>
     <div class="footer-content">
-      <p>© 2025 M. Omar — Tous droits réservés.</p>
+      <p>© 2025 Mustafa Omar Amin — Tous droits réservés.</p>
       <p>Développeur Web & Technicien IT Freelance</p>
     </div>
   </footer>
@@ -232,6 +247,14 @@
         successMsg.textContent = '❌ Une erreur est survenue.';
         successMsg.classList.remove('hidden');
       });
+    });
+
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      burger.classList.toggle('toggle'); // Ajoute une rotation (simule transformation)
     });
   </script>
   
